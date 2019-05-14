@@ -1,0 +1,7 @@
+1、打开配置sources.list文件
+sudo nano /etc/apt/sources.list
+2、用#注释掉原文件内容，用以下内容取代（Ctrl + O 保存再 Ctrl + X 退出，stretch是版本和我不一样的不用改后面的，地址改了就行）：
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
+deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ stretch main contrib non-free rpi
+3、编辑镜像站后，请使用命令
+sudo apt-get update
