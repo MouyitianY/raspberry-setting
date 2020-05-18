@@ -1,0 +1,30 @@
+1.安装并编译rtl
+cd ~
+sudo apt-get install cmake libusb-1.0-0-dev build-essential
+git clone git://git.osmocom.org/rtl-sdr.git
+cd rtl-sdr
+mkdir build
+cd build
+cmake ../ -DINSTALL_UDEV_RULES=ON
+make
+sudo make install
+sudo ldconfig
+sudo cp ~/rtl-sdr/rtl-sdr.rules /etc/udev/rules.d/
+
+2.安装并编译dump1090-hptoa
+git clone https://github.com/openskynetwork/dump1090-hptoa
+cd dump1090-hptoa
+mkdir build
+cd build 
+cmake ../
+make
+
+3.修改dump1090-hptoa
+修改modes.c中要插入的表
+复制需要修改的文件到对应文件夹
+
+4.安装mysql
+sudo apt-get install default-libmysqlcilent-dev
+
+5.重新编译dump1090-hptoa
+
