@@ -24,7 +24,7 @@ make
 复制需要修改的文件到对应文件夹
 
 4.安装mysql
-sudo apt-get install default-libmysqlcilent-dev
+sudo apt-get install default-libmysqlclient-dev
 
 5.重新编译dump1090-hptoa
 
