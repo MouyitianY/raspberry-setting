@@ -5,6 +5,7 @@ nano testboot.sh
 
 1.2写入如下代码
 #!/bin/sh
+sleep 10s
 rmmod dvb_usb_rtl28xxu rtl2832
 /home/pi/dump1090-hptoa/build/./dump1090
 （注：第一行不可省略，所有.sh文件必备）
