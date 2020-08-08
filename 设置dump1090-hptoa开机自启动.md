@@ -4,6 +4,7 @@
 nano testboot.sh
 
 ## 1.2写入如下代码
+'''
 #!/bin/sh
 while true
 do
@@ -19,6 +20,7 @@ echo "process already started!"
 fi
 sleep 1
 done
+'''
 （注：第一行不可省略，所有.sh文件必备）
 
 ## 1.3给文件＋权限
