@@ -13,7 +13,8 @@ ps -ef | grep "/home/pi/dump1090-hptoa/build/./dump1090" | grep -v "grep"
 if [ "$?" -eq 1 ]
 then
 rmmod dvb_usb_rtl28xxu rtl2832
-/home/pi/dump1090-hptoa/build/./dump1090
+/home/pi/dump1090-hptoa/build/./dump1090 >/dev/null 2>&1
+#>/dev/null 2>&1表示重定向到回收站，即不产生输出，减小日志负担
 #启动应用，修改成自己的启动应用脚本或命令
 echo "process has been restarted!"
 else
