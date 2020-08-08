@@ -5,9 +5,20 @@ nano testboot.sh
 
 1.2写入如下代码
 #!/bin/sh
-sleep 10s
+while true
+do
+ps -ef | grep "/home/pi/dump1090-hptoa/build/./dump1090" | grep -v "grep"
+if [ "$?" -eq 1 ]
+then
 rmmod dvb_usb_rtl28xxu rtl2832
 /home/pi/dump1090-hptoa/build/./dump1090
+#启动应用，修改成自己的启动应用脚本或命令
+echo "process has been restarted!"
+else
+echo "process already started!"
+fi
+sleep 1
+done
 （注：第一行不可省略，所有.sh文件必备）
 
 1.3给文件＋权限
@@ -40,3 +51,13 @@ sudo systemctl status testboot.service
 2.6查看进程情况：
 ps -A
 
+3 关闭日志文件
+
+3.1 查看日志（systemd-journald）配置
+sudo nano /etc/systemd/journald.conf
+
+3.2 更改配置文件
+使Storage=none
+
+3.3 重启服务
+sudo systemctl restart systemd-journald
