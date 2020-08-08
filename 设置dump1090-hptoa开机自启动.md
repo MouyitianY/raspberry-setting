@@ -29,6 +29,7 @@ done
 chmod 777 testboot.sh
 ```
 # 2.添加自启动
+.sh中的命令只能在root用户下执行。     
 2.1使用systemctl设置服务在/usr/lib/systemd/system/ 下新建文件testboot.service:
 ```shell
 sudo nano /usr/lib/systemd/system/testboot.service
@@ -43,7 +44,6 @@ ExecStart=/home/pi/testboot.sh
 [Install]
 WantedBy=multi-user.target
 ```
-只能在root用户下执行。
 2.3设置服务自启动：
 ```shell
 sudo systemctl enable testboot.service
